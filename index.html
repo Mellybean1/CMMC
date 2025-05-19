@@ -1,31 +1,99 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boots to Cyber</title>
-    <style>
-        header {
-            text-align: center;
-            background-color: #1a1a1a;
-            color: #ffffff;
-            padding: 20px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        h2 {
-            margin: 0;
-            font-size: 1.5em;
-            font-weight: 300;
-        }
-    </style>
-</head>
 <body>
     <header>
         <h1>Boots to Cyber</h1>
         <h2>Empowering Veterans in Cybersecurity</h2>
     </header>
+    <main>
+        <section>
+            <h3>CMMC Definitions by Section Code</h3>
+            <ul>
+                <li><strong>3.1:</strong> Access Control</li>
+                <li><strong>3.2:</strong> Awareness and Training</li>
+                <li><strong>3.3:</strong> Audit and Accountability</li>
+                <li><strong>3.4:</strong> Configuration Management</li>
+                <li><strong>3.5:</strong> Identification and Authentication</li>
+                <li><strong>3.6:</strong> Incident Response</li>
+                <li><strong>3.7:</strong> Maintenance</li>
+                <li><strong>3.8:</strong> Media Protection</li>
+                <li><strong>3.9:</strong> Personnel Security</li>
+                <li><strong>3.10:</strong> Physical Protection</li>
+                <li><strong>3.11:</strong> Risk Assessment</li>
+                <li><strong>3.12:</strong> Security Assessment</li>
+                <li><strong>3.13:</strong> System and Communications Protection</li>
+                <li><strong>3.14:</strong> System and Information Integrity</li>
+            </ul>
+        </section>
+    </main>
 </body>
-</html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = {
+            "3.1": [
+                "3.1.1 Limit system access to authorized users, processes acting on behalf of authorized users, and devices (including other systems).",
+                "3.1.2 Limit system access to the types of transactions and functions that authorized users are permitted to execute.",
+                "3.1.3 Control the flow of CUI in accordance with approved authorizations.",
+                "3.1.4 Separate the duties of individuals to reduce the risk of malevolent activity without collusion.",
+                "3.1.5 Employ the principle of least privilege, including for specific security functions and privileged accounts.",
+                "3.1.6 Use non-privileged accounts or roles when accessing nonsecurity functions.",
+                "3.1.7 Prevent non-privileged users from executing privileged functions and audit the execution of such functions.",
+                "3.1.8 Limit unsuccessful logon attempts.",
+                "3.1.9 Provide privacy and security notices consistent with applicable CUI rules.",
+                "3.1.10 Use session lock with pattern-hiding displays to prevent access and viewing of data after a period of inactivity.",
+                "3.1.11 Terminate (automatically) a user session after a defined condition.",
+                "3.1.12 Monitor and control remote access sessions.",
+                "3.1.13 Employ cryptographic methods to protect the confidentiality of remote access sessions.",
+                "3.1.14 Route remote access via managed access control points.",
+                "3.1.15 Authorize remote execution of privileged commands and remote access to security-relevant information.",
+                "3.1.16 Authorize wireless access prior to allowing such connections.",
+                "3.1.17 Protect wireless access using authentication and encryption.",
+                "3.1.18 Control connection of mobile devices.",
+                "3.1.19 Encrypt CUI on mobile devices and mobile computing platforms.",
+                "3.1.20 Verify and control/limit connections to and use of external systems.",
+                "3.1.21 Limit use of organizational portable storage devices on external systems.",
+                "3.1.22 Control information posted or processed on publicly accessible systems.",
+                "3.1.23 Ensure CUI is protected during transit."
+            ],
+            "3.2": [
+                "3.2.1 Ensure that managers, system administrators, and users of organizational systems are made aware of the security risks associated with their activities.",
+                "3.2.2 Ensure that personnel are trained to carry out their assigned information security-related duties and responsibilities.",
+                "3.2.3 Provide security awareness training on recognizing and reporting potential indicators of insider threat."
+            ],
+            "3.3": [
+                "3.3.1 Create, protect, and retain information system audit records to the extent needed to enable the monitoring, analysis, investigation, and reporting of unlawful or unauthorized system activity.",
+                "3.3.2 Ensure that the actions of individual system users can be uniquely traced to those users so they can be held accountable for their actions.",
+                "3.3.3 Review and update audited events.",
+                "3.3.4 Alert in the event of an audit logging process failure.",
+                "3.3.5 Correlate audit review, analysis, and reporting processes for investigation and response to indications of unlawful, unauthorized, suspicious, or unusual activity.",
+                "3.3.6 Provide audit reduction and report generation to support on-demand analysis and reporting.",
+                "3.3.7 Protect audit information and audit logging tools from unauthorized access, modification, and deletion.",
+                "3.3.8 Limit management of audit logging functionality to a subset of privileged users.",
+                "3.3.9 Synchronize internal system clocks to authoritative sources."
+            ],
+            // Add more subsections up to 3.#.100 as needed
+        };
+
+        const ul = document.querySelector("ul");
+        ul.innerHTML = "";
+
+        for (const [section, definitions] of Object.entries(sections)) {
+            const li = document.createElement("li");
+            const details = document.createElement("details");
+            const summary = document.createElement("summary");
+
+            summary.textContent = `${section}: Access Control`; // Replace with appropriate section title if needed
+            details.appendChild(summary);
+
+            definitions.forEach(def => {
+                const div = document.createElement("div");
+                div.textContent = def;
+                div.style.border = "1px solid #ccc";
+                div.style.padding = "10px";
+                div.style.margin = "5px 0";
+                details.appendChild(div);
+            });
+
+            li.appendChild(details);
+            ul.appendChild(li);
+        }
+    });
+</script>
