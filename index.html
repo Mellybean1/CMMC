@@ -145,7 +145,25 @@
             const details = document.createElement("details");
             const summary = document.createElement("summary");
 
-            summary.textContent = `${section}: Access Control`; // Replace with appropriate section title if needed
+            const sectionTitles = {
+    "3.1": "Access Control",
+    "3.2": "Awareness and Training",
+    "3.3": "Audit and Accountability",
+    "3.4": "Configuration Management",
+    "3.5": "Identification and Authentication",
+    "3.6": "Incident Response",
+    "3.7": "Maintenance",
+    "3.8": "Media Protection",
+    "3.9": "Personnel Security",
+    "3.10": "Physical Protection",
+    "3.11": "Risk Assessment",
+    "3.12": "Security Assessment",
+    "3.13": "System and Communications Protection",
+    "3.14": "System and Information Integrity"
+};
+
+// Modify this line:
+summary.textContent = `${section}: ${sectionTitles[section]}`;
             details.appendChild(summary);
 
             definitions.forEach(def => {
